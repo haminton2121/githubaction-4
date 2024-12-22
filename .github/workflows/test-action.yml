@@ -1,15 +1,15 @@
 name: First Workflow
 on: 
-  pull_request:
+  pull_request: #activity types
     types:
       - opened
   workflow_dispatch:
   push:
-    branches:
+    branches: #event filter
       - master
       - 'dev-*'
       - 'dev/**'
-    paths-ignore:
+    paths-ignore: #event filter
       - '.github/workflows/*'
 jobs:
   test:

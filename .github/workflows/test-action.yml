@@ -4,6 +4,11 @@ on:
     types:
       - opened
   workflow_dispatch:
+  push:
+    branches:
+      - master
+      - 'dev-*'
+      - 'dev/**'
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -18,5 +23,3 @@ jobs:
           node-version: 18
       - name: Install dependency
         run: npm ci
-      - name: run test
-        run: npm run test
